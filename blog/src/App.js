@@ -40,6 +40,7 @@ function App() {
     let copyArray = [...글제목].sort();
     글제목변경( copyArray );
   }
+  // return안에는 하나의 div만 가능
   return (
     <div className="App">
       <div className="black_nav">
@@ -66,8 +67,28 @@ function App() {
       </div>
       <button onClick={ 제목바꾸기 }>제목바꾸기 버튼</button>
       <button onClick={ 정렬하기 }>정렬 버튼</button>
+
+      <Modal/>
     </div>
   );
+}
+
+/*
+  1. Component 첫 글자는 대문자
+  2. return() 안에는 하나의 div로 묶어야 함
+  3. div로 묶기 싫으면 <> </>로 묶으면 됨
+ */
+function Modal() {
+  return (
+    <>
+    <div className="modal">
+        <h2>제목</h2>
+        <p>날짜</p>
+        <p>상세내용</p>
+    </div>
+    <div></div>
+    </>
+  )
 }
 
 export default App;
