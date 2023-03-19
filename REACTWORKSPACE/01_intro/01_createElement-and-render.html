@@ -27,15 +27,24 @@
       (실제 DOM이 아닌 가상 DOM의 개념)
     */
 
+    /*
+      주의사항 : 엘리먼트 생성 시 어트리뷰트 노드에 해당하는 곳은 객체를 인수로 던져야 하고
+                 class 어트리뷰트에 해당하는 값을 className이라는 프로퍼티 키를 써야 한다.
+    */
     // 가상 DOM 만들기
-    const greetingElement = React.createElement('h1', {id : 'greeting'}, 'hello world!');
+    const greetingElement = React.createElement('h1', {id : 'greeting', className : 'greeting'}, 'hello world!');
+    const textElement = React.createElement('p', {className : 'text',}, '안녕하세요 홍길동입니다.');
 
     // const domContainer = document.getElementById('root');
     // const root = ReactDOM.createRoot(domContainer);
     // root.render(greetingElement);
 
+    /*
+      React 16버전 이전의 리액트는 한 앨리먼트만 렌더링 할 수 있었지만,
+      이후 버전에서는 배열을 렌더링 할 수도 있었다.
+    */
     // 실제 DOM
-    ReactDOM.createRoot(document.getElementById('root')).render(greetingElement);
+    ReactDOM.createRoot(document.getElementById('root')).render([greetingElement, textElement]);
   </script>
 </body>
 </html>
