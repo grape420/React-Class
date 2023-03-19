@@ -22,9 +22,19 @@
       세 번쨰 인자 : 앨리먼트의 자식 노드를 표현한다.
 
       렌더링 과정에서 리액트는 이 앨리먼트를 실제 DOM앨리먼트로 변환한다.
+
+      리액트 앨리먼트는 단지 리액트에게 DOM 앨리먼트를 구성하는 방법을 알려주는 자바스크립트의 객체에 불과하다.
+      (실제 DOM이 아닌 가상 DOM의 개념)
     */
+
+    // 가상 DOM 만들기
     const greetingElement = React.createElement('h1', {id : 'greeting'}, 'hello world!');
 
+    // const domContainer = document.getElementById('root');
+    // const root = ReactDOM.createRoot(domContainer);
+    // root.render(greetingElement);
+
+    // 실제 DOM
     ReactDOM.createRoot(document.getElementById('root')).render(greetingElement);
   </script>
 </body>
