@@ -13,7 +13,25 @@
   <div id="root"></div>
 
   <script type="text/babel">
-    
+    function ChildrenPrinter(props) {
+      console.log(props);
+
+      return (
+        <>
+          <h1>자식 노드가 가지고 있는 값은?</h1>
+          <h3>children:<font style={{color:'orange'}}>{props.children}</font></h3>
+        </>
+      )
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(
+      [
+        <ChildrenPrinter>텍스트 노드</ChildrenPrinter>,
+        <ChildrenPrinter><div>텍스트 노드</div></ChildrenPrinter>,
+        <ChildrenPrinter><div>1</div><div>2</div><div>3</div></ChildrenPrinter>
+
+      ]
+    );
   </script>
 </body>
 </html>
