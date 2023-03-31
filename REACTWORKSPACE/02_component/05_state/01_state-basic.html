@@ -56,6 +56,19 @@
         const {number} = this.state;
 
         console.log('render 호출 여부');
+
+        /*
+          1. state에 변화 주기
+          state에 객체 형태로 컴포넌트가 관리할 값들이 저장되어 있을 때
+          state에 변화를 주고 싶으면 state 객체의 프로퍼티에 직접 접근해서 수정하거나
+          state 객체를 직접 새로운 객체로 바꾸는 것이 아닌 state의 setter 메소드(setState()) 를
+          호출하고 관리할 값에 변화를 준 새로운 객체를 인수로 전달해야 한다.
+
+          2. state에 변화를 줘서 render()가 재호출
+          setState()를 통해 state에 변화를 주면 자동으로 render()는 재호출 된다.(라이프 사이클 관련)
+          그러면 render()가 반환하는 새로운 엘리먼트로 가상DOM에 갈아끼우게 되고 실제 DOM Tree와 차이나는
+          부분만 확인해서 화면에서 차이나는 부분만 다시 그려주게 된다.
+        */
         
         return (
           <>
