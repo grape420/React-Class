@@ -103,3 +103,11 @@ do {
   console.log(`i = ${i}`);
   i++;
 } while (i > 5);
+console.log("---------------------");
+
+// break와 continue
+for (let i = 0; i < 10; i++) {
+  // if (i === 3) break; // 가장 가까운 반복문 종료
+  if (i === 3) continue; // 이후 문장들을 무시하고 iteration을 계속함
+  console.log(`i = ${i}`);
+}
