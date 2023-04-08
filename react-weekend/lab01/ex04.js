@@ -52,6 +52,7 @@ const employee = {
 // }
 // display(employee);
 
+// 객체 구조 분해 할당
 const { empId, empName, salary } = employee;
 console.log(empId);
 console.log(empName);
@@ -62,3 +63,4 @@ function display2({ empId, empName, salary }) {
   console.log(`이름 : ${empName}`);
   console.log(`급여 : ${salary}`);
 }
+display2(employee);
