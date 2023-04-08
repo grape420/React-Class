@@ -41,6 +41,26 @@ showUser(user);
 
 // Union(합집합) 기능을 사용해서 간단한 타입들을 조합한 새로운 타입을 선언
 type LockState = "locked" | "unlocked";
-let isLocked: LockState = "locked";
+let isLocked: LockState = "locked"; // 할당 가능한 값이 'locked'와 'unlocked' 뿐
 
 console.log(isLocked);
+
+// Union(합집합) 기능을 함수 파라미터 타입 주석에서도 활용
+function getLength(x: string | string[]) {
+  return x.length;
+}
+
+console.log(getLength("hello"));
+console.log(getLength(["a", "b", "c", "d", "e", "f"]));
+
+// 변수의 타입을 알아내고자 할때 typeof 사용
+// 배열인 경우 Array.isArray(x) 함수 사용
+
+function wrap(x: string | string[]) {
+  if (typeof x === "string") {
+    return [x];
+  }
+  return x;
+}
+
+console.log(wrap("1"));
