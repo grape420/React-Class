@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 
+// props.children : 부모 컴포넌트에서 자식 노드
 const MyComponent2 = (props) => {
-  let { name, age } = props;
+  let { name, age, children } = props;
   return (
     <>
       <h1>MyComponent2</h1>
       <h2>{name}님 환영합니다.</h2>
       <h2>나이 {age}세</h2>
+      <h2>{children}</h2>
     </>
   );
 };
@@ -14,7 +16,7 @@ const MyComponent2 = (props) => {
 // props 기본값 설정 (부모 컴포넌트에 값이 없을 경우 기본값 적용)
 MyComponent2.defaultProps = {
   name: "기본이름",
-  age: 20,
+  age: 21,
 };
 
 // props 데이터 타입 체크
