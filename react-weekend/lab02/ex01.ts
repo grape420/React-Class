@@ -64,3 +64,11 @@ function wrap(x: string | string[]) {
 }
 
 console.log(wrap("1"));
+
+/*
+  npx create-react-app lab03
+  package.json이 있는 폴더에서 npm start
+  package.json에서 dependencies는 프로젝트를 하는데 있어서 필요한 패키지 모음
+  react, react-dom, react-scripts는 필수
+  npm i : npm install
+ */
