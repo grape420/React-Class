@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import "./App.css";
+// 컴포넌트에서 CSS 파일의 스타일을 적용하려면 CSS 파일을 임포트
 
 /*
   함수형 컴포넌트
@@ -63,6 +64,15 @@ function App() {
         {name}
       </div>
       <div style={myStyle}>{name}</div>
+      <div className="my-style">
+        <label htmlFor="test1"></label>
+        <input type="text" id="test1" value={name} />
+      </div>
+      {/* 
+        HTML 속성(attribute) 이름과 다른 경우 :
+        class -> className
+        for -> htmlFor
+      */}
     </>
     // </Fragment>
   );
