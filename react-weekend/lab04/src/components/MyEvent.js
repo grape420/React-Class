@@ -18,6 +18,27 @@ class MyEvent extends Component {
     this.setState({ message: e.target.value });
   };
 
+  handleChange = (e) => {
+    // const key = e.target.name;
+    // const value = e.target.value;
+    // this.setState({key : value});
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      // Enter키를 눌렀을 때
+      alert(`${e.target.name} : ${e.target.value}`);
+    }
+  };
+
+  clear = (e) => {
+    this.setState({
+      username: "",
+      message: "",
+    });
+  };
+
   render() {
     const { username, message } = this.state;
     return (
@@ -27,7 +48,8 @@ class MyEvent extends Component {
           type="text"
           name="username"
           placeholder="이름을 입력하세요."
-          onChange={this.changeName}
+          onChange={this.handleChange}
+          onKeyDown={this.handleKeyDown}
         />
         <br />
         {/* userName에서 입력되는 값들이 자동 업데이트 */}
@@ -38,10 +60,13 @@ class MyEvent extends Component {
           type="text"
           name="message"
           placeholder="메세지를 입력하세요"
-          onChange={this.handleMessage}
+          onChange={this.handleChange}
+          onKeyDown={this.handleKeyDown}
         />
         <br />
         <input type="text" readOnly value={message} />
+        <br />
+        <button onClick={this.clear}>Clear</button>
       </>
     );
   }

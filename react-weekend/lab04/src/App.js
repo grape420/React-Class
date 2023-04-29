@@ -6,10 +6,13 @@ import MyComponent4 from "./components/MyComponent4";
 import MyState from "./components/MyState";
 import MyState2 from "./components/MyState2";
 import MyEvent from "./components/MyEvent";
+import MyEvent2 from "./components/MyEvent2";
 
 function App() {
   return (
     <>
+      <MyEvent2 />
+      <hr />
       <MyEvent />
       <hr />
       <MyState2 />

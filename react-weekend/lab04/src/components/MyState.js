@@ -10,14 +10,17 @@ import { Component } from "react";
 class MyState extends Component {
   // 필드 선언, 초기화 - 클래스 필드를 선언할 때 const, let과 같은 키워드를 사용하지 않음.
   // (1)
+
   state = {
     count: 0,
   };
+
   render() {
+    const { count } = this.state;
     return (
       <>
         <h1>MyState</h1>
-        <h1>{this.state.count}</h1>
+        <h1>Count : {count}</h1>
         <button onClick={this.plusCount}>증가</button>
         <button onClick={this.minusCount}>감소</button>
       </>
