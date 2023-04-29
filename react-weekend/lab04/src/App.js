@@ -3,6 +3,7 @@ import MyComponent2 from "./components/MyComponent2";
 import MyComponent from "./components/MyComponent";
 import MyComponent3 from "./components/MyComponent3";
 import MyComponent4 from "./components/MyComponent4";
+import MyState from "./components/MyState";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <MyComponent4 age={40}>
         <span>MyComponent4의 자식 노드입니다.</span>
       </MyComponent4>
+      <MyState></MyState>
     </>
   );
 }
