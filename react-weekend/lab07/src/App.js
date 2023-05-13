@@ -40,14 +40,31 @@ function App() {
     [todos] // 의존성 배열에는 함수에서 사용하는 모든 변수를 포함해야 한다.
   );
 
+  const onRemove = useCallback(
+    (id) => {
+      setTodos(todos.filter((todo) => todo.id !== id));
+    },
+    [todos]
+  );
+
+  const onToggle = useCallback(
+    (id) => {
+      setTodos(
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo
+        )
+      );
+    },
+    [todos]
+  );
+
   return (
     <>
-      <h1>Todo App</h1>
       <TodoTemplate>
         <TodoInsert onInsert={onInsert} />
 
         {/* state로 관리하는 할 일 목록 배열을 props로 TodoList 컴포넌트에게 전달. */}
-        <TodoList todos={todos} />
+        <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
       </TodoTemplate>
       <hr />
     </>
