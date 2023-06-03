@@ -2,7 +2,7 @@ import * as Actions from "../actions/postDetailsActions";
 
 // state 초기값
 const initialState = {
-  posts: [], // 포스트 목록(배열)
+  post: {}, // 포스트
   loading: false, // 페이지 로딩
   hasError: false, // 응답 에러 여부
 };
@@ -20,7 +20,7 @@ const postDetailsReducer = (state = initialState, action) => {
       };
     case Actions.GET_POST_DETAILS_SUCCESS:
       return {
-        posts: action.payload,
+        post: action.payload,
         loading: false,
         hasError: false,
       };
